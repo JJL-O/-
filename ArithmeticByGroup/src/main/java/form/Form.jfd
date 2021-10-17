@@ -1,0 +1,58 @@
+JFDML JFormDesigner: "6.0.6.2.195" Java: "11.0.5" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+			"$layoutConstraints": "fill,hidemode 3"
+			"$columnConstraints": "[fill][fill]"
+			"$rowConstraints": "[][][]"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "NeedNum"
+				"text": "请输入生成题目的个数"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+				"horizontalAlignment": 2
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 0,grow"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "Num"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 0,grow"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "NeedR"
+				"text": "请输入r 参数控制题目中数值"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 1,grow"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "R"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 1,grow"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "Creat"
+				"text": "生成"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "CreatActionPerformed", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 2,grow"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "Cheak"
+				"text": "检查答案"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "CheakActionPerformed", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 2,grow"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 30 )
+			"size": new java.awt.Dimension( 445, 325 )
+		} )
+	}
+}
