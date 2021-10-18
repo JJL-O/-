@@ -12,12 +12,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-
 public class Form extends JFrame {
     public Form() {
         initComponents();
     }
 
+    String[] expression;
+    String[] exercise;
     private void CreatActionPerformed(ActionEvent e) {
         // TODO add your code here
 
@@ -28,7 +29,14 @@ public class Form extends JFrame {
         } else {
             new ExpressionCreatThread().start();
             JOptionPane.showMessageDialog(null, "生成完毕");
+            for (int i=0;i<Integer.parseInt(Num.getText());i++){
+                showExercise.append(i+1+"、"+" "+exercise[i]+"\n");
+
+
+            }
+
         }
+
 
     }
 
@@ -37,7 +45,7 @@ public class Form extends JFrame {
         // TODO add your code here
         Check check = new Check();
         check.setVisible(true);
-        check.setMinimumSize(new Dimension(300, 150));
+        check.setMinimumSize(new Dimension(400, 300));
         check.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
@@ -47,47 +55,61 @@ public class Form extends JFrame {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         NeedNum = new JLabel();
         Num = new JTextField();
+        scrollPane1 = new JScrollPane();
+        showExercise = new JTextArea();
         NeedR = new JLabel();
         R = new JTextField();
         Creat = new JButton();
         Cheak = new JButton();
 
         //======== this ========
-        Container contentPane = getContentPane();
+        var contentPane = getContentPane();
         contentPane.setLayout(new MigLayout(
-                "fill,hidemode 3",
-                // columns
-                "[fill]" +
-                        "[fill]",
-                // rows
-                "[]" +
-                        "[]" +
-                        "[]"));
+            "fill,hidemode 3",
+            // columns
+            "[fill]" +
+            "[fill]" +
+            "[fill]" +
+            "[fill]" +
+            "[fill]" +
+            "[fill]" +
+            "[fill]" +
+            "[fill]" +
+            "[fill]" +
+            "[fill]" +
+            "[fill]",
+            // rows
+            "[]" +
+            "[]" +
+            "[]"));
 
         //---- NeedNum ----
-        NeedNum.setText("\u8bf7\u8f93\u5165\u751f\u6210\u9898\u76ee\u7684\u4e2a\u6570");
+        NeedNum.setText("\u8bf7\u8f93\u5165\u751f\u6210\u9898\u76ee\u4e2a\u6570");
         NeedNum.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
-        NeedNum.setHorizontalAlignment(SwingConstants.LEFT);
-        contentPane.add(NeedNum, "cell 0 0,grow");
-        contentPane.add(Num, "cell 1 0,grow");
+        contentPane.add(NeedNum, "cell 0 0 2 1,grow");
+        contentPane.add(Num, "cell 2 0 2 1");
+
+        //======== scrollPane1 ========
+        {
+            scrollPane1.setViewportView(showExercise);
+        }
+        contentPane.add(scrollPane1, "cell 4 0 7 3,grow");
 
         //---- NeedR ----
-        NeedR.setText("\u8bf7\u8f93\u5165r \u53c2\u6570\u63a7\u5236\u9898\u76ee\u4e2d\u6570\u503c");
+        NeedR.setText("\u8bf7\u8f93\u5165\u53c2\u6570\u63a7\u5236\u9898\u76ee\u6570\u503c");
         NeedR.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
-        contentPane.add(NeedR, "cell 0 1,grow");
-        contentPane.add(R, "cell 1 1,grow");
+        contentPane.add(NeedR, "cell 0 1 2 1");
+        contentPane.add(R, "cell 2 1 2 1");
 
         //---- Creat ----
         Creat.setText("\u751f\u6210");
-        Creat.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
         Creat.addActionListener(e -> CreatActionPerformed(e));
-        contentPane.add(Creat, "cell 0 2,grow");
+        contentPane.add(Creat, "cell 0 2 2 1");
 
         //---- Cheak ----
         Cheak.setText("\u68c0\u67e5\u7b54\u6848");
-        Cheak.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
         Cheak.addActionListener(e -> CheakActionPerformed(e));
-        contentPane.add(Cheak, "cell 1 2,grow");
+        contentPane.add(Cheak, "cell 2 2 2 1");
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
@@ -96,6 +118,8 @@ public class Form extends JFrame {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     private JLabel NeedNum;
     private JTextField Num;
+    private JScrollPane scrollPane1;
+    private JTextArea showExercise;
     private JLabel NeedR;
     private JTextField R;
     private JButton Creat;
@@ -106,12 +130,14 @@ public class Form extends JFrame {
     class ExpressionCreatThread extends Thread {
         @Override
         public void run() {
-            String[] expression = GenerateUtil.createExpression(Integer.parseInt(R.getText()), Integer.parseInt(Num.getText()));
-            FileIOUtil.expressionOutput(expression);
+            String[] expression  = GenerateUtil.createExpression(Integer.parseInt(R.getText()), Integer.parseInt(Num.getText()));
+            exercise=GenerateUtil.toExercise(expression);
+            FileIOUtil.expressionOutput(exercise);
 
-            String[] answer = new String[0];
-            answer = GenerateUtil.toAnswer(expression);
-            FileIOUtil.expressionOutput(answer);
+            String[] answer = GenerateUtil.toAnswer(expression);
+            FileIOUtil.answerOutput(answer);
+
+
         }
     }
 }

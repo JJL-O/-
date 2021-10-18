@@ -76,7 +76,7 @@ public class Check extends JFrame {
         check = new JButton();
 
         //======== this ========
-        Container contentPane = getContentPane();
+        var contentPane = getContentPane();
         contentPane.setLayout(new MigLayout(
             "fill,hidemode 3",
             // columns
