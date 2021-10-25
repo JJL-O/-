@@ -139,7 +139,7 @@ public class Check extends JFrame {
         @Override
         public void run() {
 
-            ExamineUtil.compareDifferent(showFile.getText(),showFile1.getText(),"src\\Grade");
+            ExamineUtil.compareDifferent(showFile.getText(),showFile1.getText(),"Grade.txt");
         }
     }
 }

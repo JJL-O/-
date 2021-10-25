@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ArithmeticByGroup:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
@@ -28,10 +33,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="jar://D:/java/jdk11/lib/src.zip!/java.base/java/lang/Integer.java" root0="SKIP_INSPECTION" />
-    <setting file="jar://D:/java/jdk11/lib/src.zip!/java.base/java/lang/NumberFormatException.java" root0="SKIP_INSPECTION" />
-  </component>
   <component name="ProjectId" id="1zZPmTW8TmvbhVuuOHfsux4jyrX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -44,8 +45,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -60,10 +64,10 @@
       <recent name="C:\Users\86185\Desktop\ArithmeticByGroup(1)\src\main" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.doTest.testInto">
-    <configuration name="MainForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MyApplication.MainForm" />
-      <module name="ArithmeticByGroup" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MyApplication.Main" />
+      <module name="ArithmeticByGroup(3)" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="MyApplication.*" />
@@ -74,58 +78,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
+    <configuration name="MainForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MyApplication.MainForm" />
+      <module name="ArithmeticByGroup(3)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MyApplication.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="doTest.testAnswer" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ArithmeticByGroup" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="doTest" />
-      <option name="METHOD_NAME" value="testAnswer" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
+      <option name="MAIN_CLASS_NAME" value="DoTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="doTest.testF" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DoTest.testInto" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="ArithmeticByGroup" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="doTest" />
-      <option name="METHOD_NAME" value="testF" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="doTest.testFour" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="ArithmeticByGroup" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="doTest" />
-      <option name="METHOD_NAME" value="testFour" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="doTest.testInto" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="ArithmeticByGroup" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="doTest" />
+      <option name="MAIN_CLASS_NAME" value="DoTest" />
       <option name="METHOD_NAME" value="testInto" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DoTest.testZero" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="ArithmeticByGroup" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DoTest" />
+      <option name="METHOD_NAME" value="testZero" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -135,18 +126,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.MainForm" />
-      <item itemvalue="TestNG.doTest.testAnswer" />
-      <item itemvalue="TestNG.doTest.testF" />
-      <item itemvalue="TestNG.doTest.testFour" />
-      <item itemvalue="TestNG.doTest.testInto" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.DoTest" />
+      <item itemvalue="TestNG.DoTest.testInto" />
+      <item itemvalue="TestNG.DoTest.testZero" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.doTest.testInto" />
-        <item itemvalue="TestNG.doTest.testFour" />
-        <item itemvalue="TestNG.doTest.testF" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.MainForm" />
-        <item itemvalue="TestNG.doTest.testAnswer" />
+        <item itemvalue="TestNG.DoTest.testZero" />
+        <item itemvalue="JUnit.DoTest" />
+        <item itemvalue="TestNG.DoTest.testInto" />
       </list>
     </recent_temporary>
   </component>
@@ -170,6 +161,8 @@
       <workItem from="1634519014496" duration="1273000" />
       <workItem from="1634532447978" duration="2504000" />
       <workItem from="1634546199394" duration="2831000" />
+      <workItem from="1634559809408" duration="1255000" />
+      <workItem from="1635175668636" duration="191000" />
     </task>
     <servers />
   </component>

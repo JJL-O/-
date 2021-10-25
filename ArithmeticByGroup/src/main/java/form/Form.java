@@ -51,6 +51,32 @@ public class Form extends JFrame {
     }
 
 
+    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    private JLabel NeedNum;
+    private JTextField Num;
+    private JScrollPane scrollPane1;
+    private JTextArea showExercise;
+    private JLabel NeedR;
+    private JTextField R;
+    private JButton Creat;
+    private JButton Cheak;
+    // JFormDesigner - End of variables declaration  //GEN-END:variables
+
+
+    class ExpressionCreatThread extends Thread {
+        @Override
+        public void run() {
+            String[] expression  = GenerateUtil.createExpression(Integer.parseInt(R.getText()), Integer.parseInt(Num.getText()));
+            exercise=GenerateUtil.toExercise(expression);
+            FileIOUtil.expressionOutput(exercise);
+
+            String[] answer = GenerateUtil.toAnswer(expression);
+            FileIOUtil.answerOutput(answer);
+
+
+        }
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         NeedNum = new JLabel();
@@ -113,31 +139,5 @@ public class Form extends JFrame {
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
-    }
-
-    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    private JLabel NeedNum;
-    private JTextField Num;
-    private JScrollPane scrollPane1;
-    private JTextArea showExercise;
-    private JLabel NeedR;
-    private JTextField R;
-    private JButton Creat;
-    private JButton Cheak;
-    // JFormDesigner - End of variables declaration  //GEN-END:variables
-
-
-    class ExpressionCreatThread extends Thread {
-        @Override
-        public void run() {
-            String[] expression  = GenerateUtil.createExpression(Integer.parseInt(R.getText()), Integer.parseInt(Num.getText()));
-            exercise=GenerateUtil.toExercise(expression);
-            FileIOUtil.expressionOutput(exercise);
-
-            String[] answer = GenerateUtil.toAnswer(expression);
-            FileIOUtil.answerOutput(answer);
-
-
-        }
     }
 }

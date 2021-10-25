@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.util.Vector;
 
 /**
- *
+ * 文件的输入和输出
  * @author : [86135]
  * @version : [v1.0]
  * @createTime : [2021/10/16 10:57]
@@ -14,7 +14,7 @@ import java.util.Vector;
 public class FileIOUtil {
     public static void answerOutput(String[] s){
 
-        String path="src\\answers.txt";
+        String path="answers.txt";
         //存储表达式文件
 
         File file=new File(path);
@@ -36,7 +36,7 @@ public class FileIOUtil {
 
     public static void expressionOutput(String[] s){
 
-        String path="src\\exercises.txt";
+        String path="exercises.txt";
         //存储表达式文件
 
         File file=new File(path);
